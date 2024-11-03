@@ -13,7 +13,7 @@ use std::time::Duration;
 
 const ERROR_MESSAGE_DISPLAY_DURATION: Duration = Duration::from_secs(30);
 const SUCCESS_MESSAGE_DISPLAY_DURATION: Duration = Duration::from_secs(10);
-const MINIMUM_NUMBER_OF_TASKS: u8 = 3;
+const MINIMUM_NUMBER_OF_TASKS: u8 = 2;
 
 fn main() {
     if let Err(error) = run_script() {
