@@ -25,12 +25,8 @@ fn main() {
 fn run_script() -> Result<(), CustomError> {
     let config = Config::new()?;
     let mut total_number_of_tasks = MINIMUM_NUMBER_OF_TASKS;
-    if !config.package_ids_not_to_update.is_empty() {
-        total_number_of_tasks += 1;
-    };
-    if config.delete_desktop_shortcut_files {
-        total_number_of_tasks += 1
-    };
+    if !config.package_ids_not_to_update.is_empty() { total_number_of_tasks += 1; };
+    if config.delete_desktop_shortcut_files { total_number_of_tasks += 1 };
     let mut progress = Progress::new(total_number_of_tasks);
 
     progress.update_progress("Resetting winget package pins...");
@@ -41,9 +37,7 @@ fn run_script() -> Result<(), CustomError> {
         for blacklisted_package_id in config.package_ids_not_to_update.iter() {
             match winget::add_winget_package_pin(blacklisted_package_id) {
                 Ok(_) => {}
-                Err(CustomError::InvalidWingetPackageIdError(message)) => {
-                    print_warning_message(&message)
-                }
+                Err(CustomError::InvalidWingetPackageIdError(message)) => print_warning_message(&message),
                 Err(err) => return Err(err),
             }
         }

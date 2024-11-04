@@ -5,7 +5,6 @@ pub(crate) struct Progress {
 
 impl Progress {
     pub(crate) fn new(total_steps: u8) -> Progress {
-        assert!(total_steps >= 1);
         Progress {
             current_step: 1,
             total_steps,

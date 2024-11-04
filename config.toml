@@ -4,7 +4,7 @@ delete_desktop_shortcut_files = true
 #
 # List of winget package ids that won't be updated.
 # Run "winget list" in a terminal in order to obtain a list of all installed packages and their corresponding ids.
-# Run "winget list --name INSERT_PACKAGE_NAME" in a terminal to find all installed packages containing that name and their corresponding ids.
+# Run "winget list --name INSERT_PACKAGE_NAME_HERE" in a terminal to find all installed packages containing that name and their corresponding ids.
 # Example:
 #   package_ids_not_to_update = [
 #       'Spotify.Spotify',
