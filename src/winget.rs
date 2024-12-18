@@ -21,7 +21,7 @@ pub fn add_winget_package_pin(package_id: &str) -> Result<(), CustomError> {
         .status();
     match result {
         Ok(exit_status) if exit_status.success() => Ok(()),
-        Ok(_) => Err(CustomError::InvalidWingetPackageIdError(format!("'{package_id}' is not a valid package id."))),
+        Ok(_) => Err(CustomError::InvalidWingetPackageIdError(format!("'No package with the id {package_id}' id installed on this system."))),
         Err(_) => Err(CustomError::AddWingetPinError(format!("Failed to add winget pin for package id '{package_id}'"))),
     }
 }
